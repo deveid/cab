@@ -15,6 +15,7 @@ import {
     Image,
     Alert
   } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export const LoginContainer= ({email,password}) => {
     const id = useSelector(state => state.loginReducer.id);
@@ -31,21 +32,23 @@ export const LoginContainer= ({email,password}) => {
     <View style={styles.container}>
         <Image style={styles.image} source={logo}/>
         <View style={styles.inputContainer}>
+        <Icon name="envelope" size={15} color="#30007D" style={styles.icon}/>
           <TextInput style={styles.inputs}
               placeholder="Email"
               keyboardType="email-address"
               underlineColorAndroid='transparent'
-              onChangeText={(email) => this.setState({email})}/>
+              />
         </View>
         
         <View style={styles.inputContainer}>
+        <Icon name="lock" size={19} color="#30007D" style={styles.icon}/>
           <TextInput style={styles.inputs}
               placeholder="Password"
               secureTextEntry={true}
               underlineColorAndroid='transparent'
-              onChangeText={(password) => this.setState({password})}/>
+            />
         </View>
-        <Button block success style={styles.button} onPress={onLogin}>
+        <Button block success style={styles.loginButton} onPress={onLogin}>
         <Text>Login</Text>
       </Button>
     </View>

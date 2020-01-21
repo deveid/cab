@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      'backgroundColor':'#30007D'
+      backgroundColor:'#30007D'
     },
     image:{
         alignContent:'center',
@@ -15,7 +15,10 @@ const styles = StyleSheet.create({
         marginBottom:10,
         position:'relative'
     },
-    button:{
+    icon:{
+        marginLeft:8,
+    },
+    loginButton:{
             backgroundColor:'#fff',
             color:'#fff',
             marginLeft:100,
@@ -37,7 +40,7 @@ const styles = StyleSheet.create({
     inputs:{
         height:45,
         marginLeft:16,
-        borderBottomColor: '#FFFFFF',
+        borderBottomColor: '#30007D',
         flex:1,
     },
     inputIcon:{
@@ -55,9 +58,7 @@ const styles = StyleSheet.create({
       width:250,
       borderRadius:30,
     },
-    loginButton: {
-      backgroundColor: "#00b5ec",
-    },
+    
     loginText: {
       color: 'white',
     }
