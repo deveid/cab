@@ -7,6 +7,8 @@ import logo from './logo.png';
 import * as loginActions from 'app/actions/loginActions';
 import { TouchableOpacity } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
+import { Card } from 'native-base';
+
 import {
     StyleSheet,
     Text,
@@ -31,6 +33,7 @@ export const LoginContainer= ({email,password}) => {
   return(
     <View style={styles.container}>
         <Image style={styles.image} source={logo}/>
+        <Card style={styles.card}>
         <View style={styles.inputContainer}>
         <Icon name="envelope" size={15} color="#30007D" style={styles.icon}/>
           <TextInput style={styles.inputs}
@@ -39,7 +42,6 @@ export const LoginContainer= ({email,password}) => {
               underlineColorAndroid='transparent'
               />
         </View>
-        
         <View style={styles.inputContainer}>
         <Icon name="lock" size={19} color="#30007D" style={styles.icon}/>
           <TextInput style={styles.inputs}
@@ -49,8 +51,9 @@ export const LoginContainer= ({email,password}) => {
             />
         </View>
         <Button block success style={styles.loginButton} onPress={onLogin}>
-        <Text>Login</Text>
+        <Text style={styles.loginText}>Login</Text>
       </Button>
+      </Card>
     </View>
 
 

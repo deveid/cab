@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     },
     image:{
         alignContent:'center',
-        flex:0.4,
+        flex:0.25,
         aspectRatio:1.5,
         resizeMode:'contain',
         marginBottom:10,
@@ -18,14 +18,25 @@ const styles = StyleSheet.create({
     icon:{
         marginLeft:8,
     },
+    card:{
+        backgroundColor:"#d3d3d3",
+        borderRadius:30,
+        height:230,
+        width:390
+
+    },
     loginButton:{
-            backgroundColor:'#fff',
-            color:'#fff',
+            backgroundColor:'#30007D',
             marginLeft:100,
             marginRight:100,
             borderRadius:30,
-            fontWeight:'bold'
+            marginTop:5
         },
+    loginText:{
+        color:"#ffffff",
+        fontWeight:'bold'
+
+    },
     inputContainer: {
         borderBottomColor: '#F5FCFF',
         backgroundColor: '#FFFFFF',
@@ -33,9 +44,13 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         width:350,
         height:45,
-        marginBottom:20,
+        marginBottom:8,
         flexDirection: 'row',
-        alignItems:'center'
+        alignItems:'center',
+        marginTop:20,
+        marginLeft:14
+        
+    
     },
     inputs:{
         height:45,
