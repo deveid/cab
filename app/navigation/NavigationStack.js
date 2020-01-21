@@ -13,6 +13,8 @@ const RNApp = createStackNavigator(
        },
     Login: {
       screen: Login,
+      navigationOptions: { headerShown: false } 
+
     },
     Home: {
       screen: Home,

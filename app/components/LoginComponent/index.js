@@ -1,0 +1,58 @@
+import React from 'react';
+import styles from './style';
+import {View,Button} from 'native-base';
+import MapView from 'react-native-maps';
+import SearchBox from '../SearchBox';
+import logo from './logo.png';
+import * as loginActions from 'app/actions/loginActions';
+import { TouchableOpacity } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+    StyleSheet,
+    Text,
+    TextInput,
+    TouchableHighlight,
+    Image,
+    Alert
+  } from 'react-native';
+
+export const LoginContainer= ({email,password}) => {
+    const id = useSelector(state => state.loginReducer.id);
+  const dispatch = useDispatch();
+  const onLogin = () => dispatch(loginActions.requestLogin('test', '1234'));
+    
+        state={
+            email:'',
+            password:''
+        }
+        
+
+  return(
+    <View style={styles.container}>
+        <Image style={styles.image} source={logo}/>
+        <View style={styles.inputContainer}>
+          <TextInput style={styles.inputs}
+              placeholder="Email"
+              keyboardType="email-address"
+              underlineColorAndroid='transparent'
+              onChangeText={(email) => this.setState({email})}/>
+        </View>
+        
+        <View style={styles.inputContainer}>
+          <TextInput style={styles.inputs}
+              placeholder="Password"
+              secureTextEntry={true}
+              underlineColorAndroid='transparent'
+              onChangeText={(password) => this.setState({password})}/>
+        </View>
+        <Button block success style={styles.button} onPress={onLogin}>
+        <Text>Login</Text>
+      </Button>
+    </View>
+
+
+
+  )
+}
+
+export default LoginContainer
