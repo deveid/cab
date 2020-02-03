@@ -49,8 +49,10 @@ class Home extends React.Component{
     }
     return(
       <Container>
-          <MapContainer region={region}/>
-        
+          <MapContainer region={region} 
+          getInputData={this.props.getInputData}
+          toggleSearchResultModal={this.props.toggleSearchResultModal}
+           />
       </Container>
     );
   }

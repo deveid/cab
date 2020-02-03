@@ -1,14 +1,24 @@
 import {connect} from "react-redux";
-import {getCurrentLocation} from '/home/david/new_tax/cab/app/actions/currentLocation';
+import {
+        getCurrentLocation,
+        getInputData,
+        toggleSearchResultModal,
+} from '../../actions/currentLocation';
 import { MapContainer } from '../MapContainer';
 import Home from "../../screens/Home";
 
 const mapStateToProps=(state)=>({
-    region:state.home.region
-});
+    region:state.region,
+    inputData:state.inputData || {},
+    resultTypes:state.resultTypes || {},
+
+},console.log(state)
+);
 
 const mapActionCreators = {
-    getCurrentLocation
+    getCurrentLocation,
+    getInputData,
+    toggleSearchResultModal
 };
 
 export default connect(mapStateToProps,mapActionCreators)(Home);
