@@ -40,7 +40,7 @@ export default class FooterComponent extends Component {
                {
                    gas.map((obj,index)=>{
                        return(
-                           <Button key={index}  onPress={() => navigate('Landing')}>
+                           <Button key={index}  onPress={() => navigate('Landing',{amount:obj.amount})}>
                                 <Icon size={37} name={obj.icon} />
                                 <Text style={{fontSize:12}}>{obj.title}</Text>
                                 <Text>{'\u20A6'}<Text style={{fontSize:13,fontWeight: 'bold',color:'#FFFFF'}}>{obj.amount}</Text></Text>

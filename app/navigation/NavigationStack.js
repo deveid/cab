@@ -23,7 +23,7 @@ const RNApp = createStackNavigator(
     },
      Landing: {
       screen: Payment,
-      navigationOptions: { headerShown: false } 
+      navigationOptions: { headerShown: false, } ,
 
     },
   },
