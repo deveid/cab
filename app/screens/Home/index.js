@@ -5,10 +5,18 @@ import { Container} from 'native-base';
 import { MapContainer} from '../../components/MapContainer';
 import GetLocation from 'react-native-get-location'
 import {Dimensions} from "react-native";
+import {
+        getCurrentLocation,
+        getInputData,
+        toggleSearchResultModal,
+} from '../../actions/currentLocation';
+import {HeaderComponent} from '../../components/HeaderComponent';
+import FooterComponent from '../../components/FooterComponent';
+
 
 const {width,height}=Dimensions.get("window");
 const ASPECT_RATIO=width/height;
-const LATITUDE_DELTA=0.922;
+const LATITUDE_DELTA=0.0012;
 const LONGITUDE_DELTA=ASPECT_RATIO*LATITUDE_DELTA
 
 class Home extends React.Component{
@@ -49,10 +57,12 @@ class Home extends React.Component{
     }
     return(
       <Container>
+          <HeaderComponent />
           <MapContainer region={region} 
           getInputData={this.props.getInputData}
           toggleSearchResultModal={this.props.toggleSearchResultModal}
            />
+           <FooterComponent navigation={this.props.navigation}/>
       </Container>
     );
   }

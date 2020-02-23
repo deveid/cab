@@ -4,42 +4,50 @@ import {Text} from 'react-native';
 import {View,Input,InputGroup} from 'native-base';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { SearchBar } from 'react-native-elements';
+import {
+        getCurrentLocation,
+        getInputData,
+        toggleSearchResultModal,
+} from '../../actions/currentLocation';
+import {GooglePlacesInput} from './places';
 
+class SearchBox extends React.Component {
 
-export const SearchBox = ({getInputData, toggleSearchResultModal}) => {
-
-    function handleInput(key,val){
-        getInputData({
-            key,
-            value:val
-        });
+    constructor(props){
+        super(props);
+        this.state={
+            pickUp:'',
+            dropOff:'',
+            }
     }
+    handleInputPickUp=(val)=>{
+        this.setState({pickUp:val})
+        }
 
+    handleInputDropOff = (val) =>{
+        this.setState({dropOff:val})
+        }
+    
+    render(){
   return(
-    <View style={styles.searchBox}>
+  <View style={styles.searchBox}>
         <View style={styles.inputWrapper}>
             <Text style={styles.label}>PICK UP</Text>
-            <InputGroup>
-            <Icon name="search" size={15} color="#FF5E3A"/>
-                <Input onFocus={()=>toggleSearchResultModal("pickUp")}
-                style={styles.inputSearch} placeholder="Enter Pickup Location" 
-                onChangeText={handleInput.bind(this, "pickUp")}/>
-            </InputGroup>
+            {/* <InputGroup>
+            <Icon name="search" size={15} color="#FF5E3A"/> */}
+                <GooglePlacesInput api={'AIzaSyCWg-zPpPLbCaE1-Y6SUVeHccm6zWIyPXI'} />
+            {/* </InputGroup> */}
         </View>
         <View style={styles.inputWrapper}>
             <Text style={styles.label}>DROP OFF</Text>
-            <InputGroup>
-            <Icon name="search" size={15} color="#FF5E3A"/>
-                <Input onFocus={()=>toggleSearchResultModal("dropOff")}
-                style={styles.inputSearch} placeholder="Enter Drop Off Location"
-                    onChangeText={handleInput.bind(this, "dropOff")}
-                />
-            </InputGroup>
+            {/* <Icon name="search" size={15} color="#FF5E3A"/> */}
+        <GooglePlacesInput api={'AIzaSyCoNwB6smz5XvoavCCOLWnXgqpxDDORGaU'}/>
         </View>
 
     </View>
 
   );
+}
 };
 
 export default SearchBox;

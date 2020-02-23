@@ -4,6 +4,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import Login from 'app/screens/Login';
 import Home from 'app/screens/Home';
 import SplashScreen from 'app/screens/Splash';
+import Payment from 'app/screens/Payment';
 
 const RNApp = createStackNavigator(
   {
@@ -19,6 +20,11 @@ const RNApp = createStackNavigator(
     Home: {
       screen: Home,
       navigationOptions: { headerShown: false } 
+    },
+     Landing: {
+      screen: Payment,
+      navigationOptions: { headerShown: false } 
+
     },
   },
   {

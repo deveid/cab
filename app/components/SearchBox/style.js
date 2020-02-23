@@ -36,6 +36,10 @@ const styles = {
         marginLeft:10,
         marginTop:10,
         marginBottom:0
+    },
+    icon:{
+        marginTop:15,
+        marginLeft:6
     }
 };
 

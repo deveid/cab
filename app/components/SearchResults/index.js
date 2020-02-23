@@ -6,8 +6,6 @@ import { SearchBar, Avatar } from 'react-native-elements';
 import Icon from "react-native-vector-icons/MaterialIcons";
 
 export const SearchResults= () => {
-
-
   return(
       <View style={styles.searchResult}>
 
@@ -16,7 +14,6 @@ export const SearchResults= () => {
             <Left style={styles.leftContainer}>
                 <Icon style={styles.leftIcon} name="location-on"/>
             </Left>
-              <Text style={styles.leftText}>list1</Text>
             </ListItem>
 
     

@@ -19,8 +19,8 @@ export const MapContainer= ({region, getInputData,toggleSearchResultModal}) => {
         coordinate={region}
         pinColor="green"/>
       </MapView>
-      <SearchBox getInputData={getInputData} toggleSearchResultModal={toggleSearchResultModal} />
-      <SearchResults/>
+      <SearchBox getInputData={getInputData} />
+      {/* <SearchResults/> */}
     </View>
   )
 }

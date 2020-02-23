@@ -28,7 +28,7 @@ export function getCurrentLocation(){
 
 //GET INPUT
 
-export function getInputData(payload){
+const getInputData=(payload)=>{
     return{
         type: GET_INPUT,
         payload
@@ -36,7 +36,7 @@ export function getInputData(payload){
 }
 
 //toogle search result modal
-export function toggleSearchResultModal(payload){
+const toggleSearchResultModal=(payload)=>{
     return{
         type: TOGGLE_SEARCH_RESULT,
         payload

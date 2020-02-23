@@ -7,13 +7,15 @@ import {
 import { MapContainer } from '../MapContainer';
 import Home from "../../screens/Home";
 
-const mapStateToProps=(state)=>({
-    region:state.region,
-    inputData:state.inputData || {},
-    resultTypes:state.resultTypes || {},
+const mapStateToProps=(state)=>{
+    console.log(state)
+    return{
+        region:state.region,
+        inputData:state.inputData || {},
+        resultTypes:state.resultTypes || {},
+    }
 
-},console.log(state)
-);
+};
 
 const mapActionCreators = {
     getCurrentLocation,
@@ -21,4 +23,4 @@ const mapActionCreators = {
     toggleSearchResultModal
 };
 
-export default connect(mapStateToProps,mapActionCreators)(Home);
+export default connect(mapStateToProps,mapActionCreators)(MapContainer);
