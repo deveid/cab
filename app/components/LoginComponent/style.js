@@ -5,7 +5,8 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor:'#30007D'
+      backgroundColor:'#30007D',
+      height:50
     },
     image:{
         alignContent:'center',
@@ -18,11 +19,15 @@ const styles = StyleSheet.create({
     icon:{
         marginLeft:8,
     },
+    smallcontainer:{
+        marginBottom:100
+    },
     card:{
         backgroundColor:"#d3d3d3",
         borderRadius:30,
         height:230,
-        width:390
+        width:390,
+        marginTop:10,
 
     },
     loginButton:{

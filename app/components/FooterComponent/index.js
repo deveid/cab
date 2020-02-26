@@ -15,6 +15,14 @@ export default class FooterComponent extends Component {
         super(props);
     }
 
+    state = {
+        value: ''
+      }
+    
+      receivedValue = (value) => {
+        this.setState({value})
+      }
+
     render() {
     const {navigate} = this.props.navigation;
     //gas items
@@ -40,10 +48,10 @@ export default class FooterComponent extends Component {
                {
                    gas.map((obj,index)=>{
                        return(
-                           <Button key={index}  onPress={() => navigate('Landing',{amount:obj.amount})}>
+                           <Button key={index}  onPress={() => navigate('Paystack',{amount:obj.amount, receivedValue: this.receivedValue})}>
                                 <Icon size={37} name={obj.icon} />
                                 <Text style={{fontSize:12}}>{obj.title}</Text>
-                                <Text>{'\u20A6'}<Text style={{fontSize:13,fontWeight: 'bold',color:'#FFFFF'}}>{obj.amount}</Text></Text>
+                                <Text>{'\u20A6'}<Text style={{fontSize:13,fontWeight: 'bold'}}>{obj.amount}</Text></Text>
                             </Button>
                        )
                    })
