@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor:'#30007D'
+      backgroundColor:'#3679D1'
     },
     image:{
         alignContent:'center',
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
 
     },
     loginButton:{
-            backgroundColor:'#30007D',
+            backgroundColor:'#3679D1',
             marginLeft:100,
             marginRight:100,
             borderRadius:30,
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     inputs:{
         height:45,
         marginLeft:16,
-        borderBottomColor: '#30007D',
+        borderBottomColor: '#3679D1',
         flex:1,
     },
     inputIcon:{

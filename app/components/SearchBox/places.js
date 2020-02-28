@@ -36,7 +36,7 @@ export const GooglePlacesInput = ({api}) => {
           underlineColorAndroid: 'transparent',
           borderRadius: 10 ,
           borderColor: '#1faadb',
-          backgroundColor : "#30007D",
+          backgroundColor : "#3679D1",
 
         },
         

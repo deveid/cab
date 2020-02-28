@@ -5,7 +5,6 @@ import logo from '../../screens/Splash/logo.png'
 import styles from './style';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { createStackNavigator, createAppContainer } from 'react-navigation-stack';  
-import Landing from 'app/screens/Payment';
 
 
 

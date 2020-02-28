@@ -6,7 +6,7 @@ import styles from './style';
 
 export const HeaderComponent=()=>{
     return(
-        <Header style={{backgroundColor:"#30007D"}} iosBarStyle="light-content">
+        <Header style={{backgroundColor:"#3679D1"}} iosBarStyle="light-content">
              <Left>
             <Button transparent>
               <Icon name='menu' />

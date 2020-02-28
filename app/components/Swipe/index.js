@@ -1,38 +1,99 @@
-import { Dimensions } from 'react-native';
-import SideSwipe from 'react-native-sideswipe';
-import { View } from 'react-native';
-import d1 from './d1.jpg';
+import React from 'react'
+import { View, ScrollView, Text } from 'react-native'
+import { Stat } from '../Stat';
+import { Slide } from '../Slide';
+import { styles } from './style';
+import {Button} from 'native-base';
 
 
-export default class Swipe extends Component {
-  state = {
-    currentIndex: 0,
-  };
 
-  render = () => {
-    // center items on screen
-    const { width } = Dimensions.get('window');
-    const contentOffset = (width - CustomComponent.WIDTH) / 2;
+export const Carousel = (props) => {
 
-    return (
-      <SideSwipe
-        index={this.state.currentIndex}
-        itemWidth={CustomComponent.WIDTH}
-        style={{ width }}
-        data={data}
-        contentOffset={contentOffset}
-        onIndexChange={index =>
-          this.setState(() => ({ currentIndex: index }))
-        }
-        renderItem={({ itemIndex, currentIndex, item, animatedValue }) => (
-         <View
-            {...item}
-            index={itemIndex}
-            currentIndex={currentIndex}
-            animatedValue={animatedValue}
-          />
-        )}
-      />
+  const { items, style } = props;
+  const itemsPerInterval = props.itemsPerInterval === undefined
+    ? 1
+    : props.itemsPerInterval;
+
+  const [interval, setInterval] = React.useState(1);
+  const [intervals, setIntervals] = React.useState(1);
+  const [width, setWidth] = React.useState(0);
+  // const {navigate} = props.navigation;
+
+  const init = (width) => {
+    // initialise width
+    setWidth(width);
+    // initialise total intervals
+    const totalItems = items.length;
+    setIntervals(Math.ceil(totalItems / itemsPerInterval));
+  }
+  const getInterval = (offset) => {
+    for (let i = 0; i <= intervals; i++) {
+      if (offset < (width / intervals) * i) {
+        return i;
+      }
+      if (i == intervals) {
+        return i;
+      }
+    }
+  }
+
+  let bullets = [];
+  for (let i = 1; i <= intervals; i++) {
+    bullets.push(
+      <Text
+        key={i}
+        style={{
+          ...styles.bullet,
+          opacity: interval === i ? 0.5 : 0.1
+        }}
+      >
+        &bull;
+      </Text>
     );
-  };
+  }
+
+  return (
+    <View >
+      
+      <ScrollView
+        horizontal={true}
+        contentContainerStyle={{ ...styles.scrollView, width: `${100 * intervals}%` }}
+        showsHorizontalScrollIndicator={false}
+        onContentSizeChange={(w, h) => init(w)}
+        onScroll={data => {
+          setWidth(data.nativeEvent.contentSize.width);
+          setInterval(getInterval(data.nativeEvent.contentOffset.x));
+        }}
+        scrollEventThrottle={200}
+        pagingEnabled
+        decelerationRate="fast"
+      >
+        {items.map((item, index) => {
+          switch (style) {
+            case 'stats':
+              return (
+                <Stat
+                  key={index}
+                  label={item.label}
+                  value={item.value}
+                  image={item.image}
+                />
+              );
+            default:
+              return (
+                <Slide
+                  key={index}
+                  image={item.image}
+                />
+              );
+          }
+        })}
+      </ScrollView>
+      <View style={styles.bullets}>
+        {bullets}
+        </View>
+    </View>
+  )
 }
+
+export default Carousel;
