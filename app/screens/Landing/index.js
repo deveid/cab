@@ -28,8 +28,9 @@ export default class Landing extends React.Component{
                   }, {
                   title: 'd1',
       }]}  />
+     
       <Button style={styles.btn} onPress={() => this.props.navigation.navigate('Login')}>
-          <Text style={styles.text}>Login Now</Text>
+          <Text style={styles.text}>Skip</Text>
         </Button>
     </View>
   );

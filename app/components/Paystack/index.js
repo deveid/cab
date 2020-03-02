@@ -11,6 +11,7 @@ import {Button} from 'native-base';
   	}
 	
 	onNextPress=()=>{this.props.navigation.navigate('Home');}
+	onSuccessPress=()=>{this.props.navigation.navigate('Receipt');}
 
 	  render() {
 	

@@ -1,20 +1,32 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet,Dimensions } from 'react-native';
+
+const config={
+  deviceWidth:Dimensions.get('window').width,
+  deveiceHeight:Dimensions.get('window').height
+}
+const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window')
 
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor:'#ffffff',
-      height:50
+      // justifyContent: 'center',
+      // alignItems: 'center',
+      width: SCREEN_WIDTH,
+      height: SCREEN_HEIGHT,
+      borderTopColor: "#3679D1",
+      borderTopWidth: config.deviceWidth / 2,
+      borderRightWidth: config.deviceWidth,
+      borderRightColor: 'white',
+      flex:1,
     },
     image:{
-        alignContent:'center',
-        flex:0.25,
-        aspectRatio:1.5,
+        flex:0.5,
         resizeMode:'contain',
         marginBottom:10,
-        position:'relative'
+        flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      aspectRatio:2.1
     },
     icon:{
         marginLeft:8,
@@ -28,6 +40,7 @@ const styles = StyleSheet.create({
         height:230,
         width:390,
         marginTop:10,
+        marginLeft:10
 
     },
     loginButton:{
