@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import * as loginActions from 'app/actions/loginActions';
 import styles from './styles';
 import {LoginContainer} from '../../components/LoginComponent';
-
+import LoginController from '../../components/googleSignIn';
 export default function Login() {
   const id = useSelector(state => state.loginReducer.id);
   const dispatch = useDispatch();
@@ -12,11 +12,10 @@ export default function Login() {
 
   
   return (
-    // <View style={styles.container}>
-    //   <Text>Login Status : {id}</Text>
       
-    // </View>
     <LoginContainer />
+    /* <LoginController /> */
+
     
   );
 }
